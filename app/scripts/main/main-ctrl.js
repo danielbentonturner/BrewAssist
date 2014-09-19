@@ -2,65 +2,81 @@
 
 angular.module('brewAssist')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
+    $scope.brewCalculators = [
       {
-        'key': 'angular',
-        'title': 'AngularJS',
-        'url': 'https://angularjs.org/',
-        'description': 'HTML enhanced for web apps!',
-        'logo': 'angular.png'
+        'key': 'ABV',
+        'title': 'ABV - Alcohol by Volume',
+        'description': 'Find the alcohol content by volume from the original gravity and final gravity.',
+        'code': null
       },
       {
-        'key': 'browsersync',
-        'title': 'BrowserSync',
-        'url': 'http://browsersync.io/',
-        'description': 'Time-saving synchronised browser testing.',
-        'logo': 'browsersync.png'
+        'key': 'hydroTemp',
+        'title': 'Hydrometer Temperature',
+        'description': 'Hydrometers are calibrated to a specific temperature. Find an accurate specific gravity based on liquid temp and your hydrometer calibration temp.',
+        'code': null
       },
       {
-        'key': 'gulp',
-        'title': 'GulpJS',
-        'url': 'http://gulpjs.com/',
-        'description': 'The streaming build system.',
-        'logo': 'gulp.png'
+        'key': 'IBUcalc',
+        'title': 'IBU Calculator for Bitterness',
+        'description': 'Find the IBU value for your wort.',
+        'code': null
       },
       {
-        'key': 'jasmine',
-        'title': 'Jasmine',
-        'url': 'http://jasmine.github.io/',
-        'description': 'Behavior-Driven JavaScript.',
-        'logo': 'jasmine.png'
+        'key': 'SRMcalc',
+        'title': 'SRM/Color Calculator',
+        'description': 'Find the SRM (Standard Reference Measure) color of your wort.',
+        'code': null
       },
       {
-        'key': 'karma',
-        'title': 'Karma',
-        'url': 'http://karma-runner.github.io/',
-        'description': 'Spectacular Test Runner for JavaScript.',
-        'logo': 'karma.png'
+        'key': 'boilOff',
+        'title': 'Boil Off/Dilution Calculator',
+        'description': 'Figure how much water to add or boil off to hit a specific gravity in a given volume of wort.',
+        'code': null
       },
       {
-        'key': 'protractor',
-        'title': 'Protractor',
-        'url': 'https://github.com/angular/protractor',
-        'description': 'End to end test framework for AngularJS applications built on top of WebDriverJS.',
-        'logo': 'protractor.png'
+        'key': 'pitchRate',
+        'title': 'Yeast Starter Calculator',
+        'description': 'Fnd the optimal pitch rate or yeast starter size for a given volume and specific gravity.',
+        'code': null
       },
       {
-        'key': 'jquery',
-        'title': 'jQuery',
-        'url': 'http://gulpjs.com/',
-        'description': 'The streaming build system.',
-        'logo': 'jquery.jpg'
+        'key': 'refrac',
+        'title': 'Refractometer Converter',
+        'description': 'Convert the Brix reading on your refractometer to SG (specific gravity).',
+        'code': null
       },
       {
-        'key': 'foundation',
-        'title': 'Foundation',
-        'url': 'http://foundation.zurb.com/',
-        'description': 'The most advanced responsive front-end framework in the world.',
-        'logo': 'foundation.png'
+        'key': 'mashTemp',
+        'title': 'Mash Temperature Calculator',
+        'description': 'Find the needed strike water temp and volume for a given grain weight.',
+        'code': null
+      },
+      {
+        'key': 'spargeCalc',
+        'title': 'Sparge Volume Calculator',
+        'description': 'Find the sparge volume for a given grain weight, desired wort volume, and desired gravity.',
+        'code': null
+      },
+      {
+        'key': 'kegCarb',
+        'title': 'Kegging Carbonation Calculator',
+        'description': 'Find the CO2 pressure required to bring a keg of beer to the correct CO2 volume.',
+        'code': null
+      },
+      {
+        'key': 'bottleCarb',
+        'title': 'Bottle Priming Calculator',
+        'description': 'Find the amount priming sugar needed to bring a given volume of beer to the correct CO2 volume when bottle conditioning.',
+        'code': null
+      },
+      {
+        'key': 'hopTimer',
+        'title': 'Hop Addition Boil Timer',
+        'description': 'Alert for each hop addition for a given boil time length.',
+        'code': null
       }
     ];
-    angular.forEach($scope.awesomeThings, function(awesomeThing) {
-      awesomeThing.rank = Math.random();
+    angular.forEach($scope.brewCalculators, function (brewCalculators) {
+      brewCalculators.rank = Math.random();
     });
   });
