@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('brewAssist', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ngRoute'])
+angular.module('brewAssist', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ngRoute', 'firebase'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
