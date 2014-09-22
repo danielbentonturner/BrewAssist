@@ -7,13 +7,13 @@ angular.module('brewAssist')
         'key': 'ABV',
         'title': 'ABV - Alcohol by Volume',
         'description': 'Find the alcohol content by volume from the original gravity and final gravity.',
-        'formula': null
+        'formula': '((76.08*(originalGravity-finalGravity)/(1.775-originalGravity))*(finalGravity/0.794))'
       },
       {
         'key': 'hydroTemp',
         'title': 'Hydrometer Temperature',
         'description': 'Hydrometers are calibrated to a specific temperature. Find an accurate specific gravity based on liquid temp and your hydrometer calibration temp.',
-        'formula': '((76.08*(originalGravity-finalGravity)/(1.775-originalGravity))*(finalGravity/0.794))'
+        'formula': null
       },
       {
         'key': 'IBUcalc',
