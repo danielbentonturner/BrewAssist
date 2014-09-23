@@ -7,8 +7,8 @@
 
   <section class="top-bar-section">
     <ul class="right">
-      <li class="active"><a ng-href="#">Log Out</a></li>
       <li><a ng-href="#/profile">Profile</a></li>
+      <li><a ng-href="#">Log Out</a></li>
     </ul>
   </section>
 </nav>
@@ -16,10 +16,10 @@
 <div class="row">
   <div class="large-12 large-text-center columns">
     <div class="panel">
-      <img src="images/free-beer.jpg" alt="Love Beer!" height='80' width='80'><br>
-      <h2>Available Modules</h2>
+      <img class='right' src="images/beer16.png" alt="Love Beer!" height='80' width='80'><br>
+      <h2 class="headline">Available Modules</h2>
       <p>Select the modules you'd like displayed on the main page.</p>
-      <p><a class="button radius" ng-href="#">Save Selected Modules</a></p>
+      <a class="button radius" ng-click='setViewableModules()' ng-href="#/main">Save Selected Modules</a>
     </div>
   </div>
 </div>
@@ -32,8 +32,11 @@
           <h3>{{calc.title}}</h3>
         </div>
         <div class="mod-selector switch round large">
-          <input id="{{calc.key}}" type="checkbox" name="selectedModule">
-          <label for="{{calc.key}}"></label>
+          <input id={{calc.key}} 
+            type="checkbox" 
+            name="selectedModule"
+            ng-model='calc.selectedModule' >
+          <label for={{calc.key}}></label>
         </div>
       </div>
       <p>{{calc.description}}</p>

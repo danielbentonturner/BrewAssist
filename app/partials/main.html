@@ -1,15 +1,14 @@
 <nav class="top-bar row">
   <ul class="title-area">
     <li class="name">
-      <h1><a href="#">BrewAssist</a></h1>
+      <h1><a href="#/main">BrewAssist</a></h1>
     </li>
   </ul>
 
   <section class="top-bar-section">
     <ul class="right">
-      <li><a ng-href="#/login">Log In</a></li>
-      <li class="active"><a ng-href="#">Log Out</a></li>
       <li><a ng-href="#/profile">Profile</a></li>
+      <li><a ng-href="#/logout">Log Out</a></li>
     </ul>
   </section>
 </nav>
@@ -17,8 +16,8 @@
 <div class="row">
   <div class="large-12 large-text-center columns">
     <div class="panel">
-      <img src="images/free-beer.jpg" alt="Love Beer!" height='80' width='80'><br>
-      <h2>Let's Brew Some Beer</h2>
+      <img class='right' src="images/beer16.png" alt="Love Beer!" height='80' width='80'><br>
+      <h2 class="headline">Let's Brew Some Beer</h2>
       <p>Calculator, formula, and timer modules for brew day.</p>
       <p><a class="button radius" ng-href="#/modules">Browse Modules</a></p>
     </div>
@@ -27,10 +26,12 @@
 
 <div class="row">
   <div class="large-12 columns" ng-repeat="calc in brewCalculators | orderBy:'rank'">
-    <div class="th">
-      <img class="right" ng-src="images/free-beer.jpg" alt="{{calc.title}}" height='42' width='42'>
+    <div ng-show={{calc.selectedModule}} class="th">
+      <a class="fa fa-times fa-3x right" ng-click=''></a>
       <div class="caption">
-        <h3>{{calc.title}}</h3>
+        <div class="module-header-main">
+          <h3>{{calc.title}}</h3>
+        </div>
         <p>{{calc.description}}</p>
       </div>
     </div>

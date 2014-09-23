@@ -4,6 +4,10 @@ angular.module('brewAssist', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize',
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
+        templateUrl: 'partials/login.html',
+        controller: 'LoginCtrl'
+      })
+      .when('/main', {
         templateUrl: 'partials/main.html',
         controller: 'MainCtrl'
       })
@@ -20,7 +24,7 @@ angular.module('brewAssist', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize',
         controller: 'MainCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/main'
       });
   })
 ;

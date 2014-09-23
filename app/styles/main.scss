@@ -27,9 +27,18 @@
   float: right;
 }
 
+.module-header-main {
+  display: inline-block;
+  vertical-align: center;
+  transform: translateY(.4em);
+}
+
 .module-header {
   display: inline-block;
   vertical-align: center;
-  transform: translateY(2px);
+  transform: translateY(.25em);
 }
 
+.headline {
+  transform: translateY(-11px);
+}
