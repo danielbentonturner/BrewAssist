@@ -11,10 +11,6 @@ angular.module('brewAssist', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize',
         templateUrl: 'partials/main.html',
         controller: 'MainCtrl'
       })
-      .when('/login', {
-        templateUrl: 'partials/login.html',
-        controller: 'MainCtrl'
-      })
       .when('/profile', {
         templateUrl: 'partials/profile.html',
         controller: 'MainCtrl'
@@ -28,3 +24,7 @@ angular.module('brewAssist', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize',
       });
   })
 ;
+
+// brewAssist.service('loginService',function(){
+
+// });

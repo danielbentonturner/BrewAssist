@@ -8,7 +8,7 @@
   <section class="top-bar-section">
     <ul class="right">
       <li><a ng-href="#/profile">Profile</a></li>
-      <li><a ng-href="#">Log Out</a></li>
+      <li><a ng-click='logout()'>Log Out</a></li>
     </ul>
   </section>
 </nav>
@@ -19,13 +19,13 @@
       <img class='right' src="images/beer16.png" alt="Love Beer!" height='80' width='80'><br>
       <h2 class="headline">Available Modules</h2>
       <p>Select the modules you'd like displayed on the main page.</p>
-      <a class="button radius" ng-click='setViewableModules()' ng-href="#/main">Save Selected Modules</a>
+      <a class="button radius" ng-href="#/main">Use Modules</a>
     </div>
   </div>
 </div>
 
 <div class="row">
-  <div class="large-12 columns" ng-repeat="calc in brewCalculators | orderBy:'rank'">
+  <div class="large-12 columns" ng-repeat="calc in brewCalculators">
     <div class="th">
       <div>
         <div class="module-header">
@@ -35,7 +35,8 @@
           <input id={{calc.key}} 
             type="checkbox" 
             name="selectedModule"
-            ng-model='calc.selectedModule' >
+            ng-model='userModules[calc.key]'
+            ng-change='switchModule(calc.key)'>
           <label for={{calc.key}}></label>
         </div>
       </div>

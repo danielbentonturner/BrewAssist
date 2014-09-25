@@ -8,7 +8,7 @@
   <section class="top-bar-section">
     <ul class="right">
       <li><a ng-href="#/profile">Profile</a></li>
-      <li><a ng-href="#/logout">Log Out</a></li>
+      <li><a ng-click='logout()'>Log Out</a></li>
     </ul>
   </section>
 </nav>
@@ -24,10 +24,34 @@
   </div>
 </div>
 
+<!-- <div class="row">
+  <div class="large-12 columns">
+    <div ng-show='userModules["ABV"]' class="th">
+      <a class="fa fa-times fa-3x right" ng-click='removeModule("ABV")'></a>
+      <div class="caption">
+        <div class="module-header-main">
+          <h3>ABV - Alcohol by Volume</h3>
+        </div>
+        <p>Find the alcohol content by volume from the original gravity and final gravity.</p>
+        <div class="row"></div>
+          <div class="small-6 columns">
+            <form action="">
+              <div class="row"><div class="small-4 columns"><label>Original Gravity:</label></div><div class="small-4 columns"><input type="text" value="1.050" name="ABV-OG" ng-change=''></div><div class="small-4 columns"></div></div>
+              <div class="row"><div class="small-4 columns"><label>Final Gravity:</label></div><div class="small-4 columns"><input type="text" value="1.008" name="ABV-FG" ng-change=''></div><div class="small-4 columns"></div></div>
+            </form>
+          </div>
+          <div class="small-6 columns">
+            <div class="row"><div class="small-6 columns"><h1>ABV:</h1></div> <div class="small-6 columns"><h1>5.5%</h1></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
 <div class="row">
-  <div class="large-12 columns" ng-repeat="calc in brewCalculators | orderBy:'rank'">
-    <div ng-show={{calc.selectedModule}} class="th">
-      <a class="fa fa-times fa-3x right" ng-click=''></a>
+  <div class="large-12 columns" ng-repeat="calc in brewCalculators">
+    <div ng-show='userModules[calc.key]' class="th">
+      <a class="fa fa-times fa-3x right" ng-click='removeModule(calc.key)'></a>
       <div class="caption">
         <div class="module-header-main">
           <h3>{{calc.title}}</h3>

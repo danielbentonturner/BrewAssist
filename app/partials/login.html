@@ -15,10 +15,10 @@
         E-mail Address: <input type="email" name="email" ng-model='user.email'><br>
         Password: <input type="password" name="password" ng-model='user.password'><br>
       </form>
-      <a class="button radius" ng-click='login(user.email, user.password)' ng-href='#/main'>Log In</a>  or   <button class="radius" ng-click='register(user.email, user.password)'>Register</button>
-      <h3 ng-show=''>Thank you for registering. You may now log in.</h3>
+      <h3 ng-show='successfulRegistration'>Thank you for registering. You may now log in.</h3>
+      <h3 ng-show='invalidPassword'>The password was invalid. Please try again.</h3>
+      <button class="radius" ng-click='login(user.email, user.password)'>Log In</button>   or   <button class="radius" ng-click='register(user.email, user.password)'>Register</button>
     </div>
   </div>
 </div>
 <small>Icons made by Freepik from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"title="Creative Commons BY 3.0">CC BY 3.0</a></small>
-
