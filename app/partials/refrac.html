@@ -1,0 +1,11 @@
+<div class="row" ng-controller='refracCtrl'>
+  <div class="medium-6 columns">
+    <form action="">
+      <div class="row brix"><div class="small-4 columns"><label>Brix reading:</label></div><div class="small-4 columns"><input type="text" ng-model="brix" name=""></div><div class="small-4 columns"></div></div>
+    </form>
+  </div>
+  <div class="medium-6 columns">
+    <div class="row"><div class="small-10 columns"><h3>Specific Gravity:</h3></div><div class="small-2 columns"></div></div>
+    <div class="row"><div class="small-2 columns"></div><div class="small-10 columns"><h2>{{findSG(brix)}}</h2></div></div>
+  </div>
+</div>

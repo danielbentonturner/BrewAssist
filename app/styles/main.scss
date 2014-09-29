@@ -21,6 +21,7 @@
 }
 
 .mod-selector {
+  margin-top: .3em;
   display: inline-block;
   width: 5em;
   float: right;
@@ -41,3 +42,23 @@
 .headline {
   transform: translateY(-11px);
 }
+
+.calcValue {
+  transform: translateY(12px);
+}
+
+.brix {
+  transform: translateY(20px);
+}
+
+// .amber {
+//   background-color: blue !important;
+// }
+
+// .stout {
+//   background-color: blue !important;
+// }
+
+// .pilsener {
+//   background-color: blue !important;
+// }

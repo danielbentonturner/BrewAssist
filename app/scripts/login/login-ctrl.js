@@ -2,6 +2,7 @@
 
 angular.module('brewAssist')
   .controller('LoginCtrl', function ($scope, $rootScope, $firebase, $firebaseSimpleLogin, $location, $timeout) {
+
     $scope.ref = new Firebase('https://brewassist.firebaseio.com/');
     $scope.auth = new FirebaseSimpleLogin($scope.ref, function (error, user) {
       $timeout(function () {
@@ -68,4 +69,5 @@ angular.module('brewAssist')
       $scope.auth.logout();
       $location.path('/');
     };
+
   });

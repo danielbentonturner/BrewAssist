@@ -22,9 +22,16 @@ angular.module('brewAssist', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize',
       .otherwise({
         redirectTo: '/main'
       });
-  })
-;
+  });
 
-// brewAssist.service('loginService',function(){
+  // .service('colorScheme', function () {
+  //   var colorScheme = {
+  //     color: {
+  //       theme1: 'amber',
+  //       theme2: 'pilsener',
+  //       theme3: 'stout'
+  //     }
+  //   };
+  //   return colorScheme;
+  // });
 
-// });
