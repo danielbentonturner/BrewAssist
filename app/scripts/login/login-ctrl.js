@@ -45,18 +45,7 @@ angular.module('brewAssist')
               uid: user.uid,
               email: user.email,
               userModules: {
-                'ABV': true,
-                'hydroTemp': true,
-                'IBUcalc': true,
-                'SRMcalc': true,
-                'boilOff': true,
-                'pitchRate': true,
-                'refrac': true,
-                'mashTemp': true,
-                'spargeCalc': true,
-                'kegCarb': true,
-                'bottleCarb': true,
-                'hopTimer': true
+                'ABV': true
               }
             });
           });

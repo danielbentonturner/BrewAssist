@@ -9,9 +9,6 @@ angular.module('brewAssist')
     
     $scope.userModules = $rootScope.currentUser.userModules;
 
-    // console.log('current user:', $rootScope.currentUser.uid);
-    // console.log('data object:', $rootScope.data[$rootScope.currentUser.uid].userModules);
-
     $rootScope.removeModule = function (module) {
       var obj = {};
       obj[module] = false;
@@ -35,12 +32,12 @@ angular.module('brewAssist')
           'controller': 'ABVCtrl',
           'template':  {name: 'abv.html', url: 'partials/abv.html'}
         },
-        'boilOff': {
-          'key': 'boilOff',
-          'title': 'Boil Off',
-          'description': 'Figure how much water to boil off to hit a Specific Gravity in a given volume of wort.',
-          'controller': 'boilOffCtrl',
-          'template':  {name: 'boilOff.html', url: 'partials/boilOff.html'}
+        'boilOffGrav': {
+          'key': 'boilOffGrav',
+          'title': 'Boil Off/Dilution Gravity Calculator',
+          'description': 'Find the new Specific Gravity when increasing or decreasing the volume of wort.',
+          'controller': 'boilOffGravCtrl',
+          'template':  {name: 'boilOffGrav.html', url: 'partials/boilOffGrav.html'}
         },
         // 'bottleCarb': {
         //   'key': 'bottleCarb',
@@ -49,12 +46,12 @@ angular.module('brewAssist')
         //   'controller': 'bottleCarbCtrl',
         //   'template':  {name: 'bottleCarb.html', url: 'partials/bottleCarb.html'}
         // },
-        'dilute': {
-          'key': 'dilute',
-          'title': 'Dilution Calculator',
-          'description': 'Figure how much water to add to hit a Specific Gravity in a given volume of wort.',
-          'controller': 'diluteCtrl',
-          'template':  {name: 'dilute.html', url: 'partials/dilute.html'}
+        'boilOffVol': {
+          'key': 'boilOffVol',
+          'title': 'Boil Off/Dilution Volume Calculator',
+          'description': 'Find how much water to add or boil off for the volume of wort to reach a required Specific Gravity.',
+          'controller': 'boilOffVolCtrl',
+          'template':  {name: 'boilOffVol.html', url: 'partials/boilOffVol.html'}
         },
         // 'hopTimer': {
         //   'key': 'hopTimer',
@@ -120,12 +117,4 @@ angular.module('brewAssist')
         //   'template':  {name: 'SRMcalc.html', url: 'partials/SRMcalc.html'}
         // }
       };
-
-    // angular.forEach($scope.brewCalculators, function (brewCalculators) {
-    //   brewCalculators.rank = Math.random();
-    // });
-
-    // $scope.logout = function () {
-    //   $rootScope.logout();
-    // };
   });

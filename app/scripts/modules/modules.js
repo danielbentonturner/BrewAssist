@@ -20,7 +20,7 @@ angular.module('brewAssist')
   .controller('ABVCtrl', function ($scope, $rootScope) {
 
     $scope.originalGravity = '1.050';
-    $scope.finalGravity = '1.010';
+    $scope.finalGravity = '1.012';
 
     $scope.abv = function (originalGravity, finalGravity) {
       var abv = ((76.08 * (originalGravity - finalGravity) / (1.775 - originalGravity)) * (finalGravity / 0.794));
@@ -29,14 +29,43 @@ angular.module('brewAssist')
 
   })
 
-  .controller('boilOffCtrl', function ($scope, $rootScope) {
-    
+  .controller('boilOffGravCtrl', function ($scope, $rootScope) {
+    $scope.wortVol = '7.0';
+    $scope.currentGrav = '1.040';
+    $scope.targetVol = '5.5';
+
+// End Gravity=Beg Volume * Beg Gravity / End Volume
+    $scope.gravDiff = function (wortVol, currentGrav, targetVol) {
+      var newGravity = (wortVol * ((currentGrav * 1000) - 1000) / targetVol);
+      newGravity = ((newGravity + 1000) / 1000);
+      var gravDiff = (newGravity - currentGrav);
+      return gravDiff.toFixed(3);
+    };
+
+    $scope.boilOffGrav = function (wortVol, currentGrav, targetVol) {
+      var newGravity = (wortVol * ((currentGrav * 1000) - 1000) / targetVol);
+      newGravity = ((newGravity + 1000) / 1000);
+      return newGravity.toFixed(3);
+    };
+
 
   })
 
-  .controller('diluteCtrl', function ($scope, $rootScope) {
-    
+  .controller('boilOffVolCtrl', function ($scope, $rootScope) {
+    $scope.wortVol = '4.0';
+    $scope.currentGrav = '1.069';
+    $scope.desiredGrav = '1.050';
 
+    $scope.volDiff = function (wortVol, currentGrav, desiredGrav) {
+      var newVol = (wortVol * ((currentGrav * 1000) - 1000) / ((desiredGrav * 1000) - 1000));
+      var volDiff = (newVol - wortVol);
+      return volDiff.toFixed(2);
+    };
+
+    $scope.boilOffVol = function (wortVol, currentGrav, desiredGrav) {
+      var newVolume = (wortVol * ((currentGrav * 1000) - 1000) / ((desiredGrav * 1000) - 1000));
+      return newVolume.toFixed(2);
+    };
   })
 
   .controller('bottleCarbCtrl', function ($scope, $rootScope) {
@@ -53,7 +82,7 @@ angular.module('brewAssist')
   .controller('hydroTempCtrl', function ($scope, $rootScope) {
     $scope.measuredTemp = '120';
     $scope.calTemp = '60';
-    $scope.uncorrectedSG = '1.050';
+    $scope.uncorrectedSG = '1.040';
     $scope.degF = true;
 
     $scope.correctedHydrometer = function (measuredTemp, calTemp, uncorrectedSG) {
