@@ -81,13 +81,13 @@ angular.module('brewAssist')
         //   'controller': 'kegCarbCtrl',
         //   'template':  {name: 'kegCarb.html', url: 'partials/kegCarb.html'}
         // },
-        // 'mashTemp': {
-        //   'key': 'mashTemp',
-        //   'title': 'Mash Temperature Calculator',
-        //   'description': 'Find the needed strike water temp and volume for a given grain weight.',
-        //   'controller': 'mashTempCtrl',
-        //   'template':  {name: 'mashTemp.html', url: 'partials/mashTemp.html'}
-        // },
+        'mashWater': {
+          'key': 'mashWater',
+          'title': 'Mash Infusion Calculator',
+          'description': 'Find the needed water volume (at a given temperature) to bring your mash to a specific temperature.',
+          'controller': 'mashWaterCtrl',
+          'template':  {name: 'mashWater.html', url: 'partials/mashWater.html'}
+        },
         // 'pitchRate': {
         //   'key': 'pitchRate',
         //   'title': 'Yeast Starter Calculator',
@@ -101,6 +101,13 @@ angular.module('brewAssist')
           'description': 'Convert the Brix reading on your refractometer to Specific Gravity.',
           'controller': 'refracCtrl',
           'template':  {name: 'refrac.html', url: 'partials/refrac.html'}
+        },
+        'strikeTemp': {
+          'key': 'strikeTemp',
+          'title': 'Initial Mash Strike Water Calculator',
+          'description': 'Find the needed strike water temperature for a given water/grain ratio to reach the desired temperature of the initial mash infusion.',
+          'controller': 'strikeTempCtrl',
+          'template':  {name: 'strikeTemp.html', url: 'partials/strikeTemp.html'}
         }
         // 'spargeCalc': {
         //   'key': 'spargeCalc',

@@ -1,0 +1,17 @@
+<div class="row" ng-controller='mashWaterCtrl'>
+  <div class="medium-6 columns">
+    <form action="">
+      <div class="row"><div class="small-6 columns"><label>Current Mash Temp:</label></div><div class="small-4 columns"><input type="text" ng-model="initMashTemp" name=""></div><div class="small-2 columns"></div></div>
+      <div class="row"><div class="small-6 columns"><label>Target Mash Temp:</label></div><div class="small-4 columns"><input type="text" ng-model="targetMashTemp" name=""></div><div class="small-2 columns"></div></div>
+      <div class="row"><div class="small-6 columns"><label>Current Water Volume:</label></div><div class="
+      small-4 columns"><input type="text" ng-model="currentWater" name=""></div><div class="small-2 columns"></div></div>
+      <div class="row"><div class="small-6 columns"><label>Current Water Temperature :</label></div><div class="
+      small-4 columns"><input type="text" ng-model="waterTemp" name=""></div><div class="small-2 columns"></div></div>
+      <div class="row"><div class="small-6 columns"><label>Grain Weight in Mash:</label></div><div class="small-4 columns"><input type="text" ng-model="grainWeight" name=""></div><div class="small-2 columns"></div></div>
+    </form>
+  </div>
+  <div class="medium-6 columns">
+    <div class="row"><div class="small-6 columns">American (qt/lb, &deg;F)  <input type="radio" name="mashDegF" ng-model="mashDegF" ng-value="true" ng-change="mashConvert()"></div><div class="small-6 columns">Metric (L/kg, &deg;C)  <input type="radio" name="mashDegC" ng-model="mashDegF" ng-value="false" ng-change="mashConvert()"></div></div>
+    <div class="row"><div class="small-6 columns"><h3 class="calcValue">Infusion Volume Needed:</h3></div><div class="small-6 columns"><h3 class="calcValue">{{mashWater(initMashTemp, targetMashTemp, currentWater, waterTemp, grainWeight)}}</h3></div></div>
+  </div>
+</div>
