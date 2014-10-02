@@ -28,7 +28,11 @@
 <div class="row" ng-repeat="calc in brewCalculators">
   <div class="large-12 columns" ng-show='userModules[calc.key]'>
     <div class="th">
-      <a class="fa fa-times fa-3x right" ng-click='removeModule(calc.key)'></a>
+      <div class="row">
+        <div class="large-12 columns"> 
+          <a class="fa fa-times fa-3x right" ng-click='removeModule(calc.key)'></a>
+        </div>
+      </div>
       <div class="caption">
         <div class="module-header-main">
           <h3>{{calc.title}}</h3>
