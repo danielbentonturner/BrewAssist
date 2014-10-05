@@ -3,6 +3,7 @@
 angular.module('brewAssist')
   .controller('LoginCtrl', function ($scope, $rootScope, $firebase, $firebaseSimpleLogin, $location, $timeout) {
 
+    // Authenticate the current user session
     $scope.ref = new Firebase('https://brewassist.firebaseio.com/');
     $scope.auth = new FirebaseSimpleLogin($scope.ref, function (error, user) {
       $timeout(function () {
@@ -27,6 +28,7 @@ angular.module('brewAssist')
       });
     });
 
+    // Create a new user session by logging in
     $scope.login = function (userEmail, userPassword) {
       $scope.auth.login('password', {
         email: userEmail,
@@ -34,6 +36,7 @@ angular.module('brewAssist')
       });
     };
 
+    // Register a SimpleLogin user object along with a companion data object in Firebase
     $scope.register = function (email, password) {
       $scope.auth.createUser(email, password, function (error, user) {
         if (error === null) {
@@ -54,6 +57,8 @@ angular.module('brewAssist')
         }
       });
     };
+
+    // Log the user out and kill the session
     $rootScope.logout = function () {
       $scope.auth.logout();
       $location.path('/');

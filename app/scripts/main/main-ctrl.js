@@ -9,6 +9,7 @@ angular.module('brewAssist')
     
     $scope.userModules = $rootScope.currentUser.userModules;
 
+    // Hides the module from the main view
     $rootScope.removeModule = function (module) {
       var obj = {};
       obj[module] = false;
@@ -17,6 +18,7 @@ angular.module('brewAssist')
       $scope.userModules[module] = false;
     };
 
+    // Used in the moduels view, allows modules to be hidden or shown in the main view 
     $scope.switchModule = function (module) {
       var obj = {};
       obj[module] = $scope.userModules[module];
@@ -24,10 +26,13 @@ angular.module('brewAssist')
       $rootScope.sync.$update(route, obj);
     };
 
+    // ng-repeat is used with this object to display each module. Individual modules are loaded via 
+    // html partials with their own contoller. Modules are shown or hidden by checking the user 
+    // database object and looking at the boolean for each module.
     $rootScope.brewCalculators = {
         'ABV': {
           'key': 'ABV',
-          'title': 'ABV - Alcohol by Volume',
+          'title': 'ABV - Alcohol By Volume',
           'description': 'Find the alcohol content by volume from the Original Gravity and Final Gravity.',
           'controller': 'ABVCtrl',
           'template':  {name: 'abv.html', url: 'partials/abv.html'}
@@ -109,13 +114,6 @@ angular.module('brewAssist')
           'controller': 'strikeTempCtrl',
           'template':  {name: 'strikeTemp.html', url: 'partials/strikeTemp.html'}
         }
-        // 'spargeCalc': {
-        //   'key': 'spargeCalc',
-        //   'title': 'Sparge Volume Calculator',
-        //   'description': 'Find the sparge volume for a given grain weight, desired wort volume, and desired Gravity.',
-        //   'controller': 'spargeCalcCtrl',
-        //   'template':  {name: 'spargeCalc.html', url: 'partials/spargeCalc.html'}
-        // },
         // 'SRMcalc': {
         //   'key': 'SRMcalc',
         //   'title': 'SRM/Color Calculator',

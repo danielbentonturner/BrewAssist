@@ -142,7 +142,6 @@ angular.module('brewAssist')
     var strikeTemp;
 
     $scope.strikeConvert = function () {
-      console.log('this happened');
       if (!$scope.strikeDegF) {
         $scope.ratio = '2.5';
         $scope.initMashTemp = '20';
