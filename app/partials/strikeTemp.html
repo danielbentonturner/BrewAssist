@@ -1,13 +1,52 @@
 <div class="row" ng-controller='strikeTempCtrl'>
   <div class="medium-6 columns">
     <form action="">
-      <div class="row"><div class="small-6 columns"><label>Water-to-Grain Ratio (qt-to-lb or L-to-kg):</label></div><div class="small-4 columns"><input type="text" ng-model="ratio" name=""></div><div class="small-2 columns"></div></div>
-      <div class="row"><div class="small-6 columns"><label>Initial Grain Temperature:</label></div><div class="small-4 columns"><input type="text" ng-model="initMashTemp" name=""></div><div class="small-2 columns"></div></div>
-      <div class="row"><div class="small-6 columns"><label>Target Mash Temperature:</label></div><div class="small-4 columns"><input type="text" ng-model="targetMashTemp" name=""></div><div class="small-2 columns"></div></div>
+      <div class="row">
+        <div class="small-6 columns">
+          <label>Water-to-Grain Ratio (qt-to-lb or L-to-kg):</label>
+        </div>
+        <div class="small-4 columns">
+          <input type="text" ng-model="ratio" name="">
+        </div>
+        <div class="small-2 columns"></div>
+      </div>
+      <div class="row">
+        <div class="small-6 columns">
+          <label>Initial Grain Temperature:</label>
+        </div>
+        <div class="small-4 columns">
+          <input type="text" ng-model="initMashTemp" name="">
+        </div>
+        <div class="small-2 columns"></div>
+      </div>
+      <div class="row">
+        <div class="small-6 columns">
+          <label>Target Mash Temperature:</label>
+        </div>
+        <div class="small-4 columns">
+          <input type="text" ng-model="targetMashTemp" name="">
+        </div>
+        <div class="small-2 columns"></div></div>
     </form>
   </div>
   <div class="medium-6 columns">
-    <div class="row"><div class="small-6 columns">Fahrenheit  <input type="radio" name="strikeDegF" ng-model="strikeDegF" ng-value="true" ng-change="strikeConvert()"></div><div class="small-6 columns">Celsius  <input type="radio" name="strikeDegC" ng-model="strikeDegF" ng-value="false" ng-change="strikeConvert()"></div></div>
-    <div class="row"><div class="small-6 columns"><h3 class="calcValue">Strike Temp:</h3></div><div class="small-6 columns"><h3 class="calcValue">{{strikeTemp(ratio, initMashTemp, targetMashTemp)}}</h3></div></div>
+    <div class="row">
+      <div class="small-6 columns">
+        <span class="spacer">Fahrenheit</span>
+        <input type="radio" name="strikeDegF" ng-model="strikeDegF" ng-value="true" ng-change="strikeConvert()">
+      </div>
+      <div class="small-6 columns">
+        <span class="spacer">Celsius</span>
+        <input type="radio" name="strikeDegC" ng-model="strikeDegF" ng-value="false" ng-change="strikeConvert()">
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-6 columns">
+        <h3 class="calcValue">Strike Temp:</h3>
+      </div>
+      <div class="small-6 columns">
+        <h3 class="calcValue">{{strikeTemp(ratio, initMashTemp, targetMashTemp)}}</h3>
+      </div>
+    </div>
   </div>
 </div>

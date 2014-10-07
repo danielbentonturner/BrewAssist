@@ -7,7 +7,7 @@
 </nav>
 
 <div class="row">
-  <div class="large-12 large-text-center columns">
+  <div class="medium-12 columns">
     <div class="panel">
       <img class='right' src="images/beer16.png" alt="Love Beer!" height='80' width='80'><br>
       <h2 class="headline">Welcome to BrewAssist!</h2><br>
@@ -17,13 +17,13 @@
       </form>
       <h3 ng-show='successfulRegistration'>Thank you for registering. You may now log in.</h3>
       <h3 ng-show='invalidPassword'>The password was invalid. Please try again.</h3>
-      <button class="radius" ng-click='login(user.email, user.password)'>Log In</button>   or   <button class="radius" ng-click='register(user.email, user.password)'>Register</button>
+      <button class="radius" ng-click='login(user.email, user.password)'>Log In</button><span class="double-spacer">or</span><button class="radius" ng-click='register(user.email, user.password)'>Register</button>
     </div>
   </div>
 </div>
 
 <div class="row">
-  <div class="large-12 columns">
+  <div class="medium-12 columns">
     <hr>
     <p>Created by <a href="https://github.com/danielbentonturner">Daniel Turner</a></p>
   </div>

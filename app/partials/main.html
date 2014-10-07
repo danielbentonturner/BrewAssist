@@ -14,7 +14,7 @@
 </nav>
 
 <div class="row">
-  <div class="large-12 large-text-center columns">
+  <div class="medium-12 columns">
     <div class="panel">
       <img class='right' src="images/beer16.png" alt="Love Beer!" height='80' width='80'><br>
       <h2 class="headline">Let's Brew Some Beer</h2>
@@ -26,10 +26,10 @@
 
 
 <div class="row" ng-repeat="calc in brewCalculators">
-  <div class="large-12 columns" ng-show='userModules[calc.key]'>
+  <div class="medium-12 columns" ng-show='userModules[calc.key]'>
     <div class="th">
       <div class="row">
-        <div class="large-12 columns"> 
+        <div class="medium-12 columns"> 
           <a class="fa fa-times fa-3x right" ng-click='removeModule(calc.key)'></a>
         </div>
       </div>
@@ -47,7 +47,7 @@
 </div>
 
 <div class="row">
-  <div class="large-12 columns">
+  <div class="medium-12 columns">
     <hr>
     <p>Created by <a href="https://github.com/danielbentonturner">Daniel Turner</a></p>
   </div>
