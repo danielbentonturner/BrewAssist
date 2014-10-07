@@ -118,10 +118,10 @@ angular.module('brewAssist')
     $scope.mashWater = function (initMashTemp, targetMashTemp, currentWater, waterTemp, grainWeight) {
       if (!$scope.mashDegF) {
         mashWater = ((targetMashTemp - initMashTemp) * ((0.41 * grainWeight) + parseFloat(currentWater)) / (waterTemp - targetMashTemp));
-        return mashWater.toFixed(1);
+        return mashWater.toFixed(1) + 'L';
       } else {
         mashWater = ((targetMashTemp - initMashTemp) * ((0.2 * grainWeight) + parseFloat(currentWater)) / (waterTemp - targetMashTemp));
-        return mashWater.toFixed(1);
+        return mashWater.toFixed(1) + 'qt';
       }
     };
   })
@@ -156,10 +156,10 @@ angular.module('brewAssist')
     $scope.strikeTemp = function (ratio, initMashTemp, targetMashTemp) {
       if (!$scope.strikeDegF) {
         strikeTemp = ((0.41 / ratio) * (targetMashTemp - initMashTemp) + parseFloat(targetMashTemp));
-        return strikeTemp.toFixed(1);
+        return strikeTemp.toFixed(1) + '°C';
       } else {
         strikeTemp = ((0.2 / ratio) * (targetMashTemp - initMashTemp) + parseFloat(targetMashTemp));
-        return strikeTemp.toFixed(1);
+        return strikeTemp.toFixed(1) + '°F';
       }
     };
   });
